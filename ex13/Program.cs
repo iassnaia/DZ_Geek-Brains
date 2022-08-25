@@ -1,12 +1,12 @@
 ﻿
-Console.Write("Введите число: ");
-int anyNumber = Convert.ToInt32(Console.ReadLine());
-string anyNumberText = Convert.ToString(anyNumber);
+Console.Write("Введите заданное число: ");
+int numberХ = Convert.ToInt32(Console.ReadLine());
+string numberХText = Convert.ToString(numberХ);
 {
-    if (anyNumberText.Length > 2)
+    if (numberХText.Length > 2)
     
       {
-         Console.WriteLine($"Третья цифра числа = {anyNumberText[2]}");
+         Console.WriteLine($"Третья цифра числа = {numberХText[2]}");
       }  
 
     else
