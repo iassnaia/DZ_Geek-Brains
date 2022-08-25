@@ -1,11 +1,16 @@
-﻿Console.WriteLine("Введите число: ");
-int numberA = Convert.ToInt32(Console.ReadLine());
-int numberB = numberA / 100 % 10;
+﻿
+Console.Write("Введите число: ");
+int anyNumber = Convert.ToInt32(Console.ReadLine());
+string anyNumberText = Convert.ToString(anyNumber);
 {
-    if (numberA < 100)
-        Console.WriteLine("Третьей цифры в заданном нет");
+    if (anyNumberText.Length > 2)
+    
+      {
+         Console.WriteLine($"Третья цифра числа = {anyNumberText[2]}");
+      }  
 
     else
-
-        Console.WriteLine($"Третья цифра числа = {numberB}");
+    Console.WriteLine("Третьей цифры в заданном числе нет");
+      
 }
+
