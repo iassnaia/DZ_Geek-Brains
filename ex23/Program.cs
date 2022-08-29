@@ -1,25 +1,44 @@
-﻿Console.Write("Введите число: ");
-int cube = Convert.ToInt32(Console.ReadLine());
-
-void Cube(int[] cube)
+﻿using static System.Console;
+int N = InputNumber("Введите число: ");
+if (N != 0)
 {
-  int counter = 0;
-  int length = cube.Length;
-  while (counter <  length){
-    cube[counter] = Convert.ToInt32(Math.Pow(counter, 3));
-    counter++;
-  }
+    int n = N < 0 ? Math.Abs(N)
+ + 2 : N;
+    int[] arrey = new int[n];
+    arrey = GetCub(N, n);
+    WriteArrey("Кубы от 1 до "+Convert.ToString(N)+": ", arrey, n);
+}
+else { WriteLine(N)
+; }
+
+void WriteArrey(string text, int[] arrey, int n)
+{
+    Write(text);
+    Write(arrey[0]);
+    for (int i = 1; i < n; i++)
+    {
+        Write($", {arrey[i]}");
+    }
 }
 
-void PrintArry(int[] coll)
+int InputNumber(string text)
 {
-  int count = coll.Length;
-  int index = 0;
-  while(index < count)
-  {
-    Console.Write(coll[index]+ " ");
-    index++;
-  }
-} 
+    bool isNumber = false; int x = 0;
+    while (!isNumber)
+    {
+        Write(text);
+        isNumber = int.TryParse(ReadLine(), out x);
+        if (!isNumber) { WriteLine("Это не число"); }
+    }
+    return x;
+}
 
-int[] arry = new int[cube+1];
+int[] GetCub(int N, int n)
+{
+    int[] arrey = new int[n];
+    for (int i = 1; i < n + 1; i++)
+    {
+        arrey[i - 1] = N < 0 ? (int)Math.Pow(2 - i, 3) : i * i * i;
+    }
+    return arrey;
+}
